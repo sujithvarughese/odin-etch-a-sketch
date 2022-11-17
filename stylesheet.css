@@ -1,0 +1,23 @@
+
+.row {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+    margin: auto;
+}
+
+.square {
+    border: 1px dotted red;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.square:hover {
+    background-color: black;
+    border: none;
+    color: white;
+    cursor: crosshair;
+}
