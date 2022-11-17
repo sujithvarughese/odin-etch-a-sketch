@@ -1,23 +1,23 @@
-
-.row {
-    border: 1px solid blue;
-    display: flex;
-    justify-content: flex-start;
-    width: auto;
-    margin: auto;
+header {
+    background-color: royalblue;
+    padding: 30px;
+    margin-bottom: 20px;
 }
-
-.square {
-    border: 1px dotted red;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
+table {
+    border: 2px solid black;
+    height: 960px;
+    width: 960px;
+    margin: auto
 }
-
-.square:hover {
+.rows {
+    border: 1px solid green;
+}
+td {
+    border: 1px solid gray;
+}
+.cell:hover {
     background-color: black;
     border: none;
-    color: white;
+    color: black;
     cursor: crosshair;
 }
