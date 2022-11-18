@@ -21,3 +21,6 @@ td {
     color: black;
     cursor: crosshair;
 }
+.square {
+    border: 1px solid black;
+}

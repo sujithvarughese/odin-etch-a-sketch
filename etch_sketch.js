@@ -21,11 +21,22 @@ function createGameUsingTable(num) {
         }
     }
 }
+    // creates board in grid format instead of using tables
+function createGameUsingGrid(num) {
+    let board = document.getElementById("board-grid");
+    for (let i = 0; i < num; i++) {
+        for (let j = 0; j < num; j++) {
+            const div = document.createElement('square-${i}-${j}')
+            board.appendChild(div);
+            div.className = 'square';
+        }
+    }
+}
 
     // board is created and user can begin drawing
 function draw(){
         // selects all cells with class=cell
-    const elements = document.querySelectorAll("[class~='cell']");
+    const elements = document.querySelectorAll("[class~='square']");
         // event listener will be added to each element from elements (representing one cell from the board)
     elements.forEach((element) => {
         element.addEventListener("click", () => {
@@ -44,5 +55,5 @@ function markCell(cellID) {
     markedCell.style.background = "black";
 }
 
-createGameUsingTable(num);
+createGameUsingGrid(num);
 draw();
