@@ -1,26 +1,45 @@
+:root {
+    --board-columns: 16;
+}
 header {
     background-color: royalblue;
     padding: 30px;
     margin-bottom: 20px;
 }
+
 table {
     border: 2px solid black;
     height: 960px;
     width: 960px;
     margin: auto
 }
+
 .rows {
     border: 1px solid green;
 }
+
 td {
     border: 1px solid gray;
 }
+
 .cell:hover {
     background-color: black;
     border: none;
     color: black;
     cursor: crosshair;
 }
+
+
+.board-grid {
+    display: grid;
+    width: 960px;
+    height: 960px;
+    grid-template-columns: var(--board-columns);
+
+    border: 2px solid red;
+}
+
 .square {
-    border: 1px solid black;
+    gap: 1px 1px;
+    border: 1px solid blue;
 }

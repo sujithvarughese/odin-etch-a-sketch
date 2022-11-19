@@ -1,6 +1,6 @@
     // number of rows and columns: 16 x 16 board
     // can implement a function where user input is taken, then user-desired drawing board can be made
-const num = 16;
+const num = 4;
 
     // takes number as input and sets that to column and rows, then will create drawing board
 function createGameUsingTable(num) {
@@ -23,10 +23,15 @@ function createGameUsingTable(num) {
 }
     // creates board in grid format instead of using tables
 function createGameUsingGrid(num) {
-    let board = document.getElementById("board-grid");
+    const board = document.querySelector("[class~='board-grid']");
+    let numColumnsCss = '';
+    for (let i = 0; i < num; i ++) {
+        numColumnsCss += '1fr ';
+    }
+    board.style.setProperty("--board-columns", numColumnsCss);
     for (let i = 0; i < num; i++) {
         for (let j = 0; j < num; j++) {
-            const div = document.createElement('square-${i}-${j}')
+            const div = document.createElement(`square-${i}-${j}`)
             board.appendChild(div);
             div.className = 'square';
         }
