@@ -1,39 +1,30 @@
     // number of rows and columns: 16 x 16 board
     // can implement a function where user input is taken, then user-desired drawing board can be made
-const num = 4;
+let num;
 
-    // takes number as input and sets that to column and rows, then will create drawing board
-function createGameUsingTable(num) {
-        // create variable for the whole drawing board. This is where we will be inserting each row
-    let board = document.getElementById("board");
-    for (let i = 0, row; i < num; i++) {
-            // inserts row into board(table)
-        row = board.insertRow();
-            // rows will have same className
-        row.className = 'rows';
-        for (let j = 0, cell; j < num; j++) {
-                // insert cell for all columns per row
-            cell = row.insertCell();
-                // cells need class name for eventListener later to actually interact and draw
-            cell.className = "cell"
-                // each cell id is unique "row-col"- will be used to fill in one cell at a time
-            cell.id = `${i}-${j}`;
-        }
-    }
-}
     // creates board in grid format instead of using tables
-function createGameUsingGrid(num) {
+function createGameUsingGrid(num = 16) {
+        // create variable for the whole drawing board. This is where the squares will be inserted
     const board = document.querySelector("[class~='board-grid']");
+        // initialize variable so CSS can make the grid using grid-template-columns
     let numColumnsCss = '';
+        // we need to send it as string so CSS can read it for the property, so we send
+            // string of '1fr ' repeated the amount of times the user defined
     for (let i = 0; i < num; i ++) {
         numColumnsCss += '1fr ';
     }
+        // we have our string variable ready and let CSS make the grid by setting the property
     board.style.setProperty("--board-columns", numColumnsCss);
+        // obv can do num*num instead of nested loop if preferred
     for (let i = 0; i < num; i++) {
         for (let j = 0; j < num; j++) {
-            const div = document.createElement(`square-${i}-${j}`)
+            const div = document.createElement(`square`)
+                // squares are being added row by row, letting the defined number of columns in CSS work
             board.appendChild(div);
+                // class name needed to allow EventListener to listen for entire grid
             div.className = 'square';
+                // id needed to we can fill in the square appropriately when user clicks it
+            div.id = `square-${i}-${j}`;
         }
     }
 }
