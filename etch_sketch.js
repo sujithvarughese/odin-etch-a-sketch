@@ -51,5 +51,12 @@ function markCell(cellID) {
     markedCell.style.background = "black";
 }
 
+    // function to clear entire board if user desires
+function resetBoard() {
+    let allSquares = document.querySelectorAll('square');
+    allSquares.forEach(square => square.style.background = "white");
+}
+
+
 createGameUsingGrid(num);
 draw();
