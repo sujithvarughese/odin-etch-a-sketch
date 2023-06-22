@@ -12,7 +12,6 @@ header {
     display: grid;
     width: 960px;
     height: 960px;
-    grid-template-columns: var(--board-columns);
     border: 2px solid red;
 }
 

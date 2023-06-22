@@ -1,33 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {useState} from "react";
+import Square from "./Square.jsx";
+import Color from "./Color.jsx";
+import {nanoid} from "nanoid";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+   const [grid, setGrid] = useState([])
+   const [size, setSize] = useState(16)
+   const [styles, setStyles] = useState({})
+
+   const createGrid = size => {
+      const tempGrid = []
+      for (let x = 0; x < size; x++) {
+         for (let y = 0; y < size; y++) {
+            tempGrid.push(`${x}-${y}`)
+         }
+      }
+      setGrid(tempGrid)
+   }
+
+   const handleSubmit = (e) => {
+      e.preventDefault()
+      setStyles({gridTemplateColumns:`repeat(${size}, 1fr)`, gridTemplateRows:`repeat(${size}, 1fr)`})
+      createGrid(size)
+   }
+
+   console.log('rendering...')
+
+   return (
+      <>
+      <Color />
+      <form onSubmit={handleSubmit}>
+         <label htmlFor='size'>size:</label>
+         <input type='number' id='size' min='10' max='100' onChange={(e)=>setSize((e.target.value))}/>
+         <button type='submit'>start game</button>
+      </form>
+
+      <div className='board-grid' style={styles}>
+        {
+          grid.map(square => {
+            const id = nanoid()
+            return (
+               <div key={id}>
+                 <Square sqID={square}/>
+               </div>
+            )
+          })
+        }
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
     </>
   )
 }
