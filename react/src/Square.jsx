@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {useGlobalContext} from "./context.jsx";
 
 const Square = () => {
 
 	const { color } = useGlobalContext()
 
+	// state is used for individual square color so not needed in global
 	const [squareStyles, setSquareStyles] = useState()
 
 
@@ -13,7 +14,6 @@ const Square = () => {
 			className='square'
 			style={{background: squareStyles}}
 			onClick={()=>setSquareStyles(color)}>
-XY
 		</div>
 	);
 };

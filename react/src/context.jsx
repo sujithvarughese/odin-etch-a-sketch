@@ -14,9 +14,9 @@ const AppProvider = ( {children} ) => {
 			{
 				color,
 				setColor,
+				size,
 				setSize,
 				grid,
-				size,
 				setGrid,
 				styles,
 				setStyles

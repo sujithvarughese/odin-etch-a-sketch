@@ -1,9 +1,10 @@
-import {useGlobalContext} from "./context.jsx";
+import { useGlobalContext } from "./context.jsx";
 
 const Form = () => {
 
 	const { size, setSize, setColor, setStyles } = useGlobalContext()
 
+	// on submit, grid styles state is updated, which triggers grid re-render (instead of using size which would cause grid to re-render multiple times as user scrolls through grid sizes)
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		setStyles({gridTemplateColumns:`repeat(${size}, 1fr)`, gridTemplateRows:`repeat(${size}, 1fr)`})
