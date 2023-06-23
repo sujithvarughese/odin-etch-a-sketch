@@ -1,33 +1,19 @@
 import { useState, useEffect } from "react";
+import {useGlobalContext} from "./context.jsx";
 
-const Square = ({ sqID }) => {
+const Square = () => {
 
-	// user can draw and erase as desired
-	const [clicked, setClicked] = useState(false)
+	const { color } = useGlobalContext()
 
-	// used to dynamically change inline CSS by passing in the color
-	const [styles, setStyles] = useState({background: 'white'})
-
-	// re-renders the Box component only when clicked, toggling style from white and color
-	useEffect(() => {
-		clicked && styles.background === 'white' && setStyles({background: color})
-	}, [clicked])
-
-
-	const handleClick = () => {
-		if (clicked && styles?.background === 'white') {
-
-		}
-	}
+	const [squareStyles, setSquareStyles] = useState()
 
 
 	return (
 		<div
 			className='square'
-			id={sqID}
-			style={styles}
-			onClick={()=>setClicked(true)}>
-
+			style={{background: squareStyles}}
+			onClick={()=>setSquareStyles(color)}>
+XY
 		</div>
 	);
 };
