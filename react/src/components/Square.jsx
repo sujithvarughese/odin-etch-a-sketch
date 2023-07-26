@@ -16,15 +16,14 @@ const Square = () => {
 	// state is used for individual square color so not needed in global
 	const [squareStyles, setSquareStyles] = useState()
 
+	// when reset is triggered, styles on all squares are cleared (set back to white)
 	useEffect(() => {
 		setSquareStyles("white")
 	},[reset])
 
-
-
 	return (
 		<div
-			className='square'
+			className='border-2 h-full hover:cursor-crosshair'
 			style={{backgroundColor: hover ? color : squareStyles}}
 			onClick={()=>setSquareStyles(color)}
 			onMouseEnter={handleMouseEnter}

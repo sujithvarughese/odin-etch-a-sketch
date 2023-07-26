@@ -2,26 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-header {
-    background-color: royalblue;
-
-}
-
-
-
-.board-grid {
-    display: grid;
-    width: 960px;
-    height: 960px;
-    border: 2px solid red;
-}
-
-.square {
-    border: 1px solid blue;
-    height: 100%;
-}
-
-.square:hover {
-    color: black;
-    cursor: crosshair;
-}

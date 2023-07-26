@@ -5,10 +5,14 @@ const AppContext = createContext();
 const AppProvider = ( {children} ) => {
 
 	const [color, setColor] = useState('black')
-	const [grid, setGrid] = useState([])
 	const [size, setSize] = useState(16)
-	const [styles, setStyles] = useState({})
+	const [gridStyle, setGridStyle] = useState({gridTemplateColumns:`repeat(${size}, 1fr)`, gridTemplateRows:`repeat(${size}, 1fr)`})
 	const [reset, setReset] = useState(false)
+	const [grid, setGrid] = useState([])
+
+	// -from Heading.jsx
+	// -when styles changes, useEffect in Grid.jsx is triggered which will set a new grid state based on the size selected by user
+	// -when reset is triggered, the reset state is changed, triggering the useEffect in Square.jsx, setting the local state to "white"- essentially clearing the board
 
 	return (
 		<AppContext.Provider value={
@@ -17,12 +21,12 @@ const AppProvider = ( {children} ) => {
 				setColor,
 				size,
 				setSize,
-				grid,
-				setGrid,
-				styles,
-				setStyles,
+				gridStyle,
+				setGridStyle,
 				reset,
-				setReset
+				setReset,
+				grid,
+				setGrid
 			}
 		}>
 			{children}

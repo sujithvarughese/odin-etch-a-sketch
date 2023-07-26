@@ -1,6 +1,7 @@
-import Form from "./Form.jsx";
+
 import Grid from "./components/Grid.jsx";
 import { useGlobalContext } from "./context.jsx";
+import Header from "./layouts/Header.jsx"
 
 const App = () => {
 
@@ -8,8 +9,9 @@ const App = () => {
 
    return (
       <div className="max-w-6xl mx-auto p-4">
-         <Form />
-         { grid.length > 0 && <Grid />}
+
+         <Header />
+         <Grid />
       </div>
    )
 }
