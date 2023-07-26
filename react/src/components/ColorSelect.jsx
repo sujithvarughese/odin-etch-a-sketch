@@ -6,7 +6,7 @@ const ColorSelect = () => {
 
 	return (
 		<form className="p-4 flex gap-1">
-			<label htmlFor='color'>color</label>
+			<label htmlFor='color'>Color: </label>
 			<input type='color' onChange={(e)=>setColor(e.target.value)}/>
 		</form>
 	);

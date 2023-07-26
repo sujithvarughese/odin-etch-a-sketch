@@ -19,7 +19,7 @@ const Header = () => {
 	}
 
 	return (
-		<div className="flex justify-around items-center p-4">
+		<div className="flex justify-around items-center p-4 bg-slate-200">
 
 			<div className="text-xl">
 				<ColorSelect />
@@ -29,13 +29,15 @@ const Header = () => {
 			<div className="text-3xl">Etch A Sketch!</div>
 
 
-			<form onSubmit={handleSubmit} className="p-4 flex flex-col">
-				<div>
-					<label htmlFor='size'>size:</label>
+			<form onSubmit={handleSubmit} className="p-4 flex flex-col gap-4">
+
+				<div className="flex gap-2">
+					<label className="mt-1" htmlFor='size'>Size:</label>
 					<input className="border-2" type='number' value={sizeValue} min='10' max='100' onChange={(e)=>setSizeValue((e.target.value))}/>
 				</div>
-				<div>
-					<button type="submit">reset game</button>
+
+				<div className="m-auto">
+					<button className="bg-cyan-400 h-8hover:bg-blue-700 text-white font-bold py-2 px-2 rounded text-xs" type="submit">Reset Game</button>
 				</div>
 
 			</form>

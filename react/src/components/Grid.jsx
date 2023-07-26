@@ -25,7 +25,7 @@ const Grid = () => {
 	}, [grid])
 
 	return (
-		<div className="grid h-screen border-4 border-blue-600" style={gridStyle}>
+		<div className="grid h-screen border-4 border-cyan-400" style={gridStyle}>
 			{
 				grid?.map(square => {
 					return (
