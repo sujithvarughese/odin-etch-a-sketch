@@ -1,18 +1,13 @@
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 header {
     background-color: royalblue;
-    padding: 30px;
-    margin-bottom: 20px;
+
 }
 
-body {
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .board-grid {
     display: grid;

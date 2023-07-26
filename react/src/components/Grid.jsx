@@ -1,5 +1,5 @@
 import Square from "./Square.jsx";
-import {useGlobalContext} from "./context.jsx";
+import {useGlobalContext} from "../context.jsx";
 import {useEffect} from "react";
 
 
@@ -7,6 +7,7 @@ const Grid = () => {
 
 	const { grid, setGrid, styles, size } = useGlobalContext()
 
+	// styles changes upon start game; when start game -> new grid rendered
 	useEffect(() => {
 		const tempGrid = []
 		for (let x = 0; x < size; x++) {

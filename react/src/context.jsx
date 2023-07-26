@@ -4,10 +4,11 @@ const AppContext = createContext();
 
 const AppProvider = ( {children} ) => {
 
-	const [color, setColor] = useState('white')
+	const [color, setColor] = useState('black')
 	const [grid, setGrid] = useState([])
 	const [size, setSize] = useState(16)
 	const [styles, setStyles] = useState({})
+	const [reset, setReset] = useState(false)
 
 	return (
 		<AppContext.Provider value={
@@ -19,7 +20,9 @@ const AppProvider = ( {children} ) => {
 				grid,
 				setGrid,
 				styles,
-				setStyles
+				setStyles,
+				reset,
+				setReset
 			}
 		}>
 			{children}
