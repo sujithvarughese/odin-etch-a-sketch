@@ -1,5 +1,5 @@
 import Square from "./Square.jsx";
-import {useGlobalContext} from "../context.jsx";
+import { useGlobalContext } from "../context.jsx";
 import { useEffect } from "react";
 
 

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import {useGlobalContext} from "../context.jsx";
+import { useGlobalContext } from "../context.jsx";
 
 const Square = () => {
 
 	const { color, reset } = useGlobalContext()
+	// preview color when user mouse hover over square
 	const [hover, setHover] = useState(false);
 
 	const handleMouseEnter = () => {
