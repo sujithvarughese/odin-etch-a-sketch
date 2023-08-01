@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const Grid = () => {
 
-	const { gridStyle, size, grid, setGrid, setGridStyle } = useGlobalContext()
+	const { gridStyle, size, grid, setGrid, setGridStyle, color } = useGlobalContext()
 
 	// temp array is created in order to render grid to screen, then set into global grid state
 	// when global size state changes (occurs when user presses reset in Heading.jsx, a new grid array is created)
@@ -21,11 +21,16 @@ const Grid = () => {
 
 	// when new grid array is created (but before render), grid style is set to size global state, then renders new grid
 	useEffect(() => {
-		setGridStyle({gridTemplateColumns:`repeat(${size}, 1fr)`, gridTemplateRows:`repeat(${size}, 1fr)`})
+		setGridStyle({gridTemplateColumns:`repeat(${size}, 1fr)`, gridTemplateRows:`repeat(${size}, 1fr)`, borderColor: 'black'})
 	}, [grid])
 
+	useEffect(() => {
+		console.log(color);
+		setGridStyle({ ...gridStyle, borderColor: color })
+	}, [color])
+
 	return (
-		<div className="grid h-screen border-4 border-cyan-400" style={gridStyle}>
+		<div className="grid h-screen border-4" style={gridStyle}>
 			{
 				grid?.map(square => {
 					return (
