@@ -21,7 +21,7 @@ const Header = () => {
 	return (
 		<div className="flex justify-around items-center p-4 bg-transparent">
 
-			<div style={{borderColor: color}} className="border-4 py-10 bg-neutral-300 rounded-2xl text-2xl font-serif text-white font-bold">
+			<div style={{borderColor: color}} className="border-4 py-8 bg-neutral-300 rounded-2xl text-2xl font-serif text-white font-bold">
 				<ColorSelect />
 			</div>
 
@@ -29,7 +29,7 @@ const Header = () => {
 			<div style={{color: color}} className="text-7xl underline font-serif text-white font-extrabold">Sketch!</div>
 
 
-			<form style={{borderColor: color}} onSubmit={handleSubmit} className="border-4 p-4 py-7 flex flex-col gap-4 bg-neutral-300 rounded-2xl">
+			<form style={{borderColor: color}} onSubmit={handleSubmit} className="border-4 p-4 py-5 flex flex-col gap-4 bg-neutral-300 rounded-2xl">
 
 				<div className="flex gap-2 ">
 					<label className="mt-1 text-2xl font-serif text-white font-bold" htmlFor='size'>Size:</label>
