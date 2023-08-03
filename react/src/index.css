@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.grid {
+height: 85vh;
+}
 img {
     position: absolute;
     z-index: -10;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .btn {
