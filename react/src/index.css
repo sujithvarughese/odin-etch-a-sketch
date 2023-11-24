@@ -2,17 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.grid {
-height: 85vh;
-}
-img {
-    position: absolute;
-    z-index: -10;
-    justify-content: center;
-    align-items: center;
+.background {
+    background-image: url("./assets/AdobeStock_210554360.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
+    padding: 2rem 0;
 }
 
+.grid {
+    height: 60vh;
+}
+@media (min-width: 740px) {
+    .grid {
+        height: 75vh;
+    }
+}
 .btn {
     cursor: pointer;
     color: #fff;
@@ -32,3 +37,4 @@ img {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
+

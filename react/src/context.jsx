@@ -5,7 +5,7 @@ const AppContext = createContext();
 const AppProvider = ( {children} ) => {
 
 	const [color, setColor] = useState('black')
-	const [size, setSize] = useState(16)
+	const [size, setSize] = useState(48)
 	const [gridStyle, setGridStyle] = useState({gridTemplateColumns:`repeat(${size}, 1fr)`, gridTemplateRows:`repeat(${size}, 1fr)`})
 	const [reset, setReset] = useState(false)
 	const [grid, setGrid] = useState([])

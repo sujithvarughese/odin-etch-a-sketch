@@ -26,7 +26,7 @@ const Square = () => {
 		<div
 			className='border-2 h-full hover:cursor-crosshair'
 			style={{backgroundColor: hover ? color : squareStyles}}
-			onClick={()=>setSquareStyles(color)}
+			onMouseDown={()=>setSquareStyles(color)}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
 		>
